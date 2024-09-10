@@ -1,0 +1,3 @@
+string command # Request data, eg. "start" / "stop"
+---
+bool success # response data

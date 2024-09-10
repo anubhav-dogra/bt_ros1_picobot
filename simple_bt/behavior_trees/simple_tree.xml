@@ -1,0 +1,6 @@
+<BehaviorTree>
+    <Sequence name="sequence">
+        <Condition name="is_object_detected"/>
+        <Action name="move_to_object"/>
+    </Sequence>
+</BehaviorTree>

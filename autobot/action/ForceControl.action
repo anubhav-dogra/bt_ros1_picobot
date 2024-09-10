@@ -1,0 +1,9 @@
+# Goal definition
+float64 duration
+float64 desired_force
+---
+#result definition
+bool success
+---
+#feedback definition
+float64 current_force

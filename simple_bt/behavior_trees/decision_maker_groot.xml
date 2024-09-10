@@ -1,0 +1,49 @@
+<root BTCPP_format="4">
+<BehaviorTree ID="DecisionMaker">
+        <Sequence name="root_sequence">
+            <Sequence name="Robot_setup_sequence">
+                <Fallback name= "EnableRobotMotionNodeFallback">
+                    <Condition      ID="IfRobotMotionEnabled"       name="if_robot_motion_enabled"/>
+                    <Action         ID="EnableRobotMotion"          name="enable_robot_motion"/>
+                </Fallback>
+                <Fallback name= "EnableWrenchNodeFallback">
+                    <Condition      ID="IfComputeWrenchEnabled"     name="if_wrench_enabled"/>
+                    <Action         ID="EnableComputeWrench"        name="enable_compute_wrench"/>
+                </Fallback>  
+            </Sequence>
+            <Fallback name= "SendHomePoseNodeFallback">
+                <Condition          ID="AtHomePose"                     name="if_at_home"/>
+                <Action             ID="SendHomePose"               name="send_home_pose"/>
+            </Fallback>
+            <Sequence name= "detect_and_target_sequence">
+                <Fallback name= "DetectionNodeFallback">
+                    <Condition      ID="IfDetectionEnabled"         name="if_detection_enabled"/>
+                    <Sequence name = "enable_detection_sequence">
+                        <Action     ID="EnableDetection"            name="enable_detection"/>
+                        <Action     ID="WaitPeriod"                 name="waiting"/>
+                    </Sequence>
+                </Fallback>
+                <Sequence name= "pose_validation_sending_sequence">
+                    <Condition      ID="IsPoseValid"                name="is_pose_valid"/>  
+                    <Action         ID="SendTargetPose"             name="send_target_pose"/>
+                    <Action         ID="ActivateForceController"    name="activate_force_controller"/>
+                    <Action         ID="SendHomePose"               name="send_home_pose"/>
+                </Sequence>
+            </Sequence>
+        </Sequence>
+    </BehaviorTree>
+    <TreeNodesModel>
+        <Action ID="ActivateForceController"/>
+        <Condition ID="AtHomePose"/>
+        <Action ID="EnableComputeWrench"/>
+        <Action ID="EnableDetection"/>
+        <Action ID="EnableRobotMotion"/>
+        <Condition ID="IfComputeWrenchEnabled"/>
+        <Condition ID="IfDetectionEnabled"/>
+        <Condition ID="IfRobotMotionEnabled"/>
+        <Condition ID="IsPoseValid"/>
+        <Action ID="SendHomePose"/>
+        <Action ID="SendTargetPose"/>
+        <Action ID="WaitPeriod"/>
+    </TreeNodesModel>
+</root>

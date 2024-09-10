@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" project_name="Project">
+    <include path="decision_maker_groot.xml"/>
+    <!-- Description of Node Models (used by Groot) -->
+    <TreeNodesModel>
+        <Action ID="ActivateForceController"/>
+        <Condition ID="AtHomePose"/>
+        <Action ID="EnableComputeWrench"/>
+        <Action ID="EnableDetection"/>
+        <Action ID="EnableRobotMotion"/>
+        <Condition ID="IfComputeWrenchEnabled"/>
+        <Condition ID="IfDetectionEnabled"/>
+        <Condition ID="IfRobotMotionEnabled"/>
+        <Condition ID="IsPoseValid"/>
+        <Action ID="SendHomePose"/>
+        <Action ID="SendTargetPose"/>
+        <Action ID="WaitPeriod"/>
+    </TreeNodesModel>
+</root>

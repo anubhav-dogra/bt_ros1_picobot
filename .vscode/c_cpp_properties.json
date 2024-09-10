@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "/usr/include/**",
+                "/home/terabotics/behaviour_ws/devel/include/**",
+                "/home/terabotics/stuff_ws/devel/include/**",
+                "/home/terabotics/stuff_ws/devel/.private/cartesian_trajectory_generator/include",
+                "/home/terabotics/behaviour_ws/devel/.private/autobot/include"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}
